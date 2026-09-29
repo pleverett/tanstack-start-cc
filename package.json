@@ -6,13 +6,14 @@
     "#/*": "./src/*"
   },
   "scripts": {
-    "dev": "vite dev --port 3000",
+    "dev": "vp dev --port 3000",
     "generate-routes": "tsr generate",
-    "build": "vite build",
-    "preview": "vite preview",
+    "build": "vp build",
+    "preview": "vp preview",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check"
+    "check": "biome check",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -42,8 +43,20 @@
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "typescript": "^6.0.2",
-    "vite": "^8.0.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0",
+    "vite-plus": "1.0.0"
   },
+  "overrides": {
+    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "^12.1.0",
+      "onFail": "warn"
+    }
+  },
+  "packageManager": "npm@12.1.0+sha512.17286eeb6a4dc7bd180acff9f9d1262504c556648ac2fa39080d2abc19060d1a686f8d8c27a1b6450dad77178a3389d89c8643aa4600c4482ab687a39fd406b5",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
